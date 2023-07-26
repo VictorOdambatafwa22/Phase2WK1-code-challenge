@@ -1,8 +1,8 @@
 import React from "react";
 import Transaction from "./Transaction";
-function TransactionsList({transactions}) {
+function TransactionsList({transactions,onDelete}) {
   const list = transactions.map((item)=>{
-    return <Transaction key={item.id} date={item.date} description={item.description} category={item.category} amount={item.amount} />;
+    return <Transaction key={item.id} date={item.date} description={item.description} category={item.category} amount={item.amount} onDelete={()=> onDelete(item.id)}/>;
   })
   return (
     
